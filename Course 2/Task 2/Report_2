@@ -1,1 +1,11 @@
+This notebook supports the final model evaluation report. It explores the impact of mutual information-based feature selection and includes both regression and classification experiments.
 
+For complete analysis and interpretations, please refer to the PDF report (Model.Report.pdf).
+Models used:
+Linear Regression
+Random Forest Regressor
+Gradient Boosting Regressor
+XGBoost Regressor
+Logistic Regression (classification)
+Random Forest Classifier
+XGBoost Classifier
