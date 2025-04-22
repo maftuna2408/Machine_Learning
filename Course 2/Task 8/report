@@ -1,1 +1,23 @@
+Model Evaluation Report: Gradient Boosting Classifier
+1. Baseline Model (Untuned)
+Accuracy: 0.799
+Class 1 Recall: 0.01
+Observation: The model performs well for class 0 (majority class) but almost fails to detect class 1 (minority class), highlighting a severe class imbalance issue.
 
+2. Tuned Model via GridSearchCV
+Best Params: max_depth=4, min_samples_leaf=3, min_samples_split=7, max_features='sqrt'
+accuracy: 0.802
+Class 1 Recall: 0.01
+Observation: Grid search slightly improved accuracy (~0.3%), but recall for the minority class remained very low. No substantial gain over the baseline.
+
+3. SMOTE + RandomizedSearchCV
+Sampling: SMOTE applied to balance the training set
+Best Params: Randomly chosen via 20-iteration randomized search
+Accuracy: 0.790
+Class 1 Recall: 0.02 (slight improvement)
+Observation: Despite class balancing, the overall accuracy slightly dropped and performance on class 1 remained poor. Indicates the model is still biased towards the majority class.
+
+Summary
+All models struggle significantly with detecting the minority class.
+Hyperparameter tuning marginally improved results but did not solve the imbalance issue.
+SMOTE had limited effect, suggesting the model may need alternative strategies (e.g., XGBoost, class-weight adjustment, cost-sensitive learning).
